@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+        table {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            overflow: visible;
+            position: relative;
+            z-index: 10;
+        }
+
+        td {
+            border: 3px solid #000;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            overflow: visible;
+            position: relative;
+            z-index: 100;
+        }
+
+        .class_header {
+            background-color: #dbdcf7;
+            font-weight: bold;
+        }
+
+        .table_header {
+            background-color: #d0d0d0;
+            font-weight: bold;
+        }
+
+        .yellow {
+            background-color: #FFFF99;
+        }
+
+        .orange {
+            background-color: #FFCC99;
+        }
+
+        .black {
+            color: #000;
+        }
+
+        .blue {
+            color: #000;
+        }
+
+        .winner {
+            font-weight: bold;
+        }
+
+        .score-hover {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .score-hover:hover {
+            background-color: #e6f3ff;
+            transform: scale(0.99);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        < !DOCTYPE html><html><head><style>table {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            overflow: visible;
+            position: relative;
+            z-index: 10;
+        }
+
+        td {
+            border: 3px solid #000;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            overflow: visible;
+            position: relative;
+            z-index: 100;
+        }
+
+        .class_header {
+            background-color: #dbdcf7;
+            font-weight: bold;
+        }
+
+        .table_header {
+            background-color: #d0d0d0;
+            font-weight: bold;
+        }
+
+        .yellow {
+            background-color: #FFFF99;
+        }
+
+        .orange {
+            background-color: #FFCC99;
+        }
+
+        .black {
+            color: #000;
+        }
+
+        .blue {
+            color: #000;
+        }
+
+        .winner {
+            font-weight: bold;
+        }
+
+        .score-hover {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .score-hover:hover {
+            background-color: #e6f3ff;
+            transform: scale(0.99);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .hover-image {
+            position: fixed;
+            top: -130px;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            max-width: 300px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            object-fit: contain;
+        }
+    </style>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scoreElements = document.querySelectorAll('.score-hover[data-hover-image]');
+
+            const hoverImg = document.createElement('img');
+            hoverImg.className = 'hover-image';
+            document.body.appendChild(hoverImg);
+
+            scoreElements.forEach(element => {
+                const hoverImageUrl = element.getAttribute('data-hover-image');
+
+                element.addEventListener('mouseenter', () => {
+                    hoverImg.src = hoverImageUrl;
+                    hoverImg.style.opacity = '0.95';
+                });
+
+                element.addEventListener('mousemove', (e) => {
+                    // Position relative to mouse
+                    hoverImg.style.top = (e.clientY - 220) + 'px';
+                    hoverImg.style.left = (e.clientX + 150) + 'px';
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    hoverImg.style.opacity = '0';
+                });
+            });
+        });
+    </script>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scoreElements = document.querySelectorAll('.score-hover[data-hover-image]');
+
+        // Create a single hover image element attached to body
+        const hoverImg = document.createElement('img');
+        hoverImg.className = 'hover-image';
+        document.body.appendChild(hoverImg);
+
+        scoreElements.forEach(element => {
+            const hoverImageUrl = element.getAttribute('data-hover-image');
+
+            element.addEventListener('mouseenter', () => {
+                hoverImg.src = hoverImageUrl;
+                hoverImg.style.opacity = '0.95';
+            });
+
+            element.addEventListener('mousemove', (e) => {
+                // Position relative to mouse
+                hoverImg.style.top = (e.clientY - 220) + 'px';
+                hoverImg.style.left = (e.clientX + 150) + 'px';
+            });
+
+            element.addEventListener('mouseleave', () => {
+                hoverImg.style.opacity = '0';
+            });
+        });
+    });
+</script>
+
+<body>
+<table>
+<tbody>
+<tr>
+<td class="class_header" colspan="10">Women</td>
+</tr>
+<tr>
+<td class="table_header">Rank</td>
+<td class="table_header">8 - part-final</td>
+<td class="table_header">R1</td>
+<td class="table_header">Quarter-final</td>
+<td class="table_header">R2</td>
+<td class="table_header">Semi-final</td>
+<td class="table_header">R3</td>
+<td class="table_header">Final</td>
+<td class="table_header">R4</td>
+<td class="table_header">Winner</td>
+</tr>
+<tr>
+<td class="yellow" id="rank1">1</td>
+<td class="yellow" id="player1">Sarah Schumacher</td>
+<td class="yellow black score-hover" data-hover-image="fig/0a9b75819f3afcfa.png" id="G1_score1">6 (95)</td>
+<td class="orange" id="G1_winner" rowspan="2">Sarah Schumacher</td>
+<td class="orange black score-hover" data-hover-image="fig/5e9466b7e0c1ea2b.png" id="G9_score1" rowspan="2">6 (84)</td>
+<td class="yellow" id="G9_winner" rowspan="4">Sarah Schumacher</td>
+<td class="yellow black score-hover" data-hover-image="fig/a319c32a96c44743.png" id="SF1_score1" rowspan="4">5 (73)</td>
+<td class="orange" id="SF1_winner" rowspan="8">Sarah Schumacher</td>
+<td class="orange black score-hover" data-hover-image="fig/de9ddd4d945f5774.png" id="Final_score1" rowspan="8">4 (60)</td>
+<td class="yellow winner" id="Final_winner" rowspan="16">Sarah Schumacher</td>
+</tr>
+<tr>
+<td class="yellow" id="rank16">16</td>
+<td class="yellow" id="player16">Silvia Bandera</td>
+<td class="yellow black score-hover" data-hover-image="fig/0a9b75819f3afcfa.png" id="G1_score2">1 (5)</td>
+</tr>
+<tr>
+<td class="orange" id="rank8">8</td>
+<td class="orange" id="player8">Alva Kvarnström</td>
+<td class="orange black score-hover" data-hover-image="fig/d0e600739e25e86c.png" id="G2_score1">4 (45)</td>
+<td class="orange" id="G2_winner" rowspan="2">Jasmin Bothmann</td>
+<td class="orange black score-hover" data-hover-image="fig/5e9466b7e0c1ea2b.png" id="G9_score2" rowspan="2">3 (16)</td>
+</tr>
+<tr>
+<td class="orange" id="rank9">9</td>
+<td class="orange" id="player9">Jasmin Bothmann</td>
+<td class="orange black score-hover" data-hover-image="fig/d0e600739e25e86c.png" id="G2_score2">5 (55)</td>
+</tr>
+<tr>
+<td class="yellow" id="rank5">5</td>
+<td class="yellow" id="player5">Karin Olsson</td>
+<td class="yellow black score-hover" data-hover-image="fig/82dda5d9630655d3.png" id="G3_score1">5 (74)</td>
+<td class="yellow" id="G3_winner" rowspan="2">Karin Olsson</td>
+<td class="yellow black score-hover" data-hover-image="fig/f2a6196b6680d373.png" id="G10_score1" rowspan="2">5 (57)</td>
+<td class="yellow" id="G10_winner" rowspan="4">Karin Olsson</td>
+<td class="yellow black score-hover" data-hover-image="fig/a319c32a96c44743.png" id="SF1_score2" rowspan="4">4 (27)</td>
+</tr>
+<tr>
+<td class="yellow" id="rank12">12</td>
+<td class="yellow" id="player12">Mia Vuorihovi</td>
+<td class="yellow black score-hover" data-hover-image="fig/82dda5d9630655d3.png" id="G3_score2">4 (26)</td>
+</tr>
+<tr>
+<td class="orange" id="rank4">4</td>
+<td class="orange" id="player4">Marielle Svensson</td>
+<td class="orange black score-hover" data-hover-image="fig/7daf2e71a93f89cd.png" id="G4_score1">5 (62)</td>
+<td class="yellow" id="G4_winner" rowspan="2">Marielle Svensson</td>
+<td class="yellow black score-hover" data-hover-image="fig/f2a6196b6680d373.png" id="G10_score2" rowspan="2">4 (43)</td>
+</tr>
+<tr>
+<td class="orange" id="rank13">13</td>
+<td class="orange" id="player13">Martina Maderová</td>
+<td class="orange black score-hover" data-hover-image="fig/7daf2e71a93f89cd.png" id="G4_score2">4 (38)</td>
+</tr>
+<tr>
+<td class="yellow" id="rank3">3</td>
+<td class="yellow" id="player3">Stefanie Blendermann</td>
+<td class="yellow black score-hover" data-hover-image="fig/27cf3353d5b88250.png" id="G5_score1">5 (60)</td>
+<td class="orange" id="G5_winner" rowspan="2">Stefanie Blendermann</td>
+<td class="orange black score-hover" data-hover-image="fig/49332bd4f6df94d0.png" id="G11_score1" rowspan="2">5 (43)</td>
+<td class="orange" id="G11_winner" rowspan="4">Anna Bandera</td>
+<td class="orange black score-hover" data-hover-image="fig/846023c67c51036b.png" id="SF2_score1" rowspan="4">3 (34)</td>
+<td class="orange" id="SF2_winner" rowspan="8">Vanessa Peuker</td>
+<td class="orange black score-hover" data-hover-image="fig/de9ddd4d945f5774.png" id="Final_score2" rowspan="8">3 (40)</td>
+</tr>
+<tr>
+<td class="yellow" id="rank14">14</td>
+<td class="yellow" id="player14">Kristyna Palánová</td>
+<td class="yellow black score-hover" data-hover-image="fig/27cf3353d5b88250.png" id="G5_score2">4 (40)</td>
+</tr>
+<tr>
+<td class="orange" id="rank6">6</td>
+<td class="orange" id="player6">Anna Bandera</td>
+<td class="orange black score-hover" data-hover-image="fig/c863e9651ab4ccac.png" id="G6_score1">6 (77)</td>
+<td class="orange" id="G6_winner" rowspan="2">Anna Bandera</td>
+<td class="orange black score-hover" data-hover-image="fig/49332bd4f6df94d0.png" id="G11_score2" rowspan="2">4 (57)</td>
+</tr>
+<tr>
+<td class="orange" id="rank11">11</td>
+<td class="orange" id="player11">Martina Saletta</td>
+<td class="orange black score-hover" data-hover-image="fig/c863e9651ab4ccac.png" id="G6_score2">3 (23)</td>
+</tr>
+<tr>
+<td class="yellow" id="rank7">7</td>
+<td class="yellow" id="player7">Julia Sjöberg</td>
+<td class="yellow black score-hover" data-hover-image="fig/53c32d7fe1c09601.png" id="G7_score1">5 (72)</td>
+<td class="yellow" id="G7_winner" rowspan="2">Julia Sjöberg</td>
+<td class="yellow black score-hover" data-hover-image="fig/969cec190ff8fa81.png" id="G12_score1" rowspan="2">4 (36)</td>
+<td class="orange" id="G12_winner" rowspan="4">Vanessa Peuker</td>
+<td class="orange black score-hover" data-hover-image="fig/846023c67c51036b.png" id="SF2_score2" rowspan="4">5 (66)</td>
+</tr>
+<tr>
+<td class="yellow" id="rank10">10</td>
+<td class="yellow" id="player10">Lucie Indráková</td>
+<td class="yellow black score-hover" data-hover-image="fig/53c32d7fe1c09601.png" id="G7_score2">4 (28)</td>
+</tr>
+<tr>
+<td class="orange" id="rank2">2</td>
+<td class="orange" id="player2">Vanessa Peuker</td>
+<td class="orange black score-hover" data-hover-image="fig/5c44e51900f00444.png" id="G8_score1">5 (88)</td>
+<td class="yellow" id="G8_winner" rowspan="2">Vanessa Peuker</td>
+<td class="yellow black score-hover" data-hover-image="fig/969cec190ff8fa81.png" id="G12_score2" rowspan="2">5 (64)</td>
+</tr>
+<tr>
+<td class="orange" id="rank15">15</td>
+<td class="orange" id="player15">Mirva Juhola</td>
+<td class="orange black score-hover" data-hover-image="fig/5c44e51900f00444.png" id="G8_score2">2 (12)</td>
+</tr>
+<tr>
+<td colspan="7"></td>
+<td class="table_header">3rd - 4th</td>
+<td class="table_header"> </td>
+<td class="table_header">3rd</td>
+</tr>
+<tr>
+<td colspan="7"></td>
+<td id="Bronze_player1">Karin Olsson</td>
+<td class="black score-hover" data-hover-image="fig/7109b3fcc845d019.png" id="Bronze_score1">5 (50)</td>
+<td class="winner" id="Bronze_winner" rowspan="2">Karin Olsson</td>
+</tr>
+<tr>
+<td colspan="7"></td>
+<td id="Bronze_player2">Anna Bandera</td>
+<td class="black score-hover" data-hover-image="fig/7109b3fcc845d019.png" id="Bronze_score2">4 (50)</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

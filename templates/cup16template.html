@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            overflow: visible;
+            position: relative;
+            z-index: 10;
+        }
+
+        td {
+            border: 3px solid #000;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            overflow: visible;
+            position: relative;
+            z-index: 100;
+        }
+
+        .class_header {
+            background-color: #dbdcf7;
+            font-weight: bold;
+        }
+
+        .table_header {
+            background-color: #d0d0d0;
+            font-weight: bold;
+        }
+
+        .yellow {
+            background-color: #FFFF99;
+        }
+
+        .orange {
+            background-color: #FFCC99;
+        }
+
+        .black {
+            color: #000;
+        }
+
+        .blue {
+            color: #000;
+        }
+
+        .winner {
+            font-weight: bold;
+        }
+
+        .score-hover {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .score-hover:hover {
+            background-color: #e6f3ff;
+            transform: scale(0.99);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        < !DOCTYPE html><html><head><style>table {
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            overflow: visible;
+            position: relative;
+            z-index: 10;
+        }
+
+        td {
+            border: 3px solid #000;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            overflow: visible;
+            position: relative;
+            z-index: 100;
+        }
+
+        .class_header {
+            background-color: #dbdcf7;
+            font-weight: bold;
+        }
+
+        .table_header {
+            background-color: #d0d0d0;
+            font-weight: bold;
+        }
+
+        .yellow {
+            background-color: #FFFF99;
+        }
+
+        .orange {
+            background-color: #FFCC99;
+        }
+
+        .black {
+            color: #000;
+        }
+
+        .blue {
+            color: #000;
+        }
+
+        .winner {
+            font-weight: bold;
+        }
+
+        .score-hover {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .score-hover:hover {
+            background-color: #e6f3ff;
+            transform: scale(0.99);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .hover-image {
+            position: fixed;
+            top: -130px;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            max-width: 300px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            object-fit: contain;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scoreElements = document.querySelectorAll('.score-hover[data-hover-image]');
+
+            const hoverImg = document.createElement('img');
+            hoverImg.className = 'hover-image';
+            document.body.appendChild(hoverImg);
+
+            scoreElements.forEach(element => {
+                const hoverImageUrl = element.getAttribute('data-hover-image');
+
+                element.addEventListener('mouseenter', () => {
+                    hoverImg.src = hoverImageUrl;
+                    hoverImg.style.opacity = '0.95';
+                });
+
+                element.addEventListener('mousemove', (e) => {
+                    // Position relative to mouse
+                    hoverImg.style.top = (e.clientY - 220) + 'px';
+                    hoverImg.style.left = (e.clientX + 150) + 'px';
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    hoverImg.style.opacity = '0';
+                });
+            });
+        });
+    </script>
+</head>
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scoreElements = document.querySelectorAll('.score-hover[data-hover-image]');
+
+        // Create a single hover image element attached to body
+        const hoverImg = document.createElement('img');
+        hoverImg.className = 'hover-image';
+        document.body.appendChild(hoverImg);
+
+        scoreElements.forEach(element => {
+            const hoverImageUrl = element.getAttribute('data-hover-image');
+
+            element.addEventListener('mouseenter', () => {
+                hoverImg.src = hoverImageUrl;
+                hoverImg.style.opacity = '0.95';
+            });
+
+            element.addEventListener('mousemove', (e) => {
+                // Position relative to mouse
+                hoverImg.style.top = (e.clientY - 220) + 'px';
+                hoverImg.style.left = (e.clientX + 150) + 'px';
+            });
+
+            element.addEventListener('mouseleave', () => {
+                hoverImg.style.opacity = '0';
+            });
+        });
+    });
+</script>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td class="class_header" colspan="10">Women</td>
+            </tr>
+            <tr>
+                <td class="table_header">Rank</td>
+                <td class="table_header">8 - part-final</td>
+                <td class="table_header">R1</td>
+                <td class="table_header">Quarter-final</td>
+                <td class="table_header">R2</td>
+                <td class="table_header">Semi-final</td>
+                <td class="table_header">R3</td>
+                <td class="table_header">Final</td>
+                <td class="table_header">R4</td>
+                <td class="table_header">Winner</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank1">1</td>
+                <td class="yellow" id="player1">Player 1</td>
+                <td class="yellow black" id="G1_score1">G1_score1</td>
+                <td class="orange" rowspan="2" id="G1_winner">G1_winner</td>
+                <td class="orange black" rowspan="2" id="G9_score1">G9_score1</td>
+                <td class="yellow" rowspan="4" id="G9_winner">G9_winner</td>
+                <td class="yellow black" rowspan="4" id="SF1_score1">SF1_score1</td>
+                <td class="orange" rowspan="8" id="SF1_winner">SF1_winner</td>
+                <td class="orange black" rowspan="8" id="Final_score1">Final_score1</td>
+                <td class="yellow winner" rowspan="16" id="Final_winner">Final_winner</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank16">16</td>
+                <td class="yellow" id="player16">Player 16</td>
+                <td class="yellow black" id="G1_score2">G1_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank8">8</td>
+                <td class="orange" id="player8">Player 8</td>
+                <td class="orange black" id="G2_score1">G2_score1</td>
+                <td class="orange" rowspan="2" id="G2_winner">G2_winner</td>
+                <td class="orange black" rowspan="2" id="G9_score2">G9_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank9">9</td>
+                <td class="orange" id="player9">Player 9</td>
+                <td class="orange black" id="G2_score2">G2_score2</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank5">5</td>
+                <td class="yellow" id="player5">Player 5</td>
+                <td class="yellow black" id="G3_score1">G3_score1</td>
+                <td class="yellow" rowspan="2" id="G3_winner">G3_winner</td>
+                <td class="yellow black" rowspan="2" id="G10_score1">G10_score1</td>
+                <td class="yellow" rowspan="4" id="G10_winner">G10_winner</td>
+                <td class="yellow black" rowspan="4" id="SF1_score2">SF1_score2</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank12">12</td>
+                <td class="yellow" id="player12">Player 12</td>
+                <td class="yellow black" id="G3_score2">G3_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank4">4</td>
+                <td class="orange" id="player4">Player 4</td>
+                <td class="orange black" id="G4_score1">G4_score1</td>
+                <td class="yellow" rowspan="2" id="G4_winner">G4_winner</td>
+                <td class="yellow black" rowspan="2" id="G10_score2">G10_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank13">13</td>
+                <td class="orange" id="player13">Player 13</td>
+                <td class="orange black" id="G4_score2">G4_score2</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank3">3</td>
+                <td class="yellow" id="player3">Player 3</td>
+                <td class="yellow black" id="G5_score1">G5_score1</td>
+                <td class="orange" rowspan="2" id="G5_winner">G5_winner</td>
+                <td class="orange black" rowspan="2" id="G11_score1">G11_score1</td>
+                <td class="orange" rowspan="4" id="G11_winner">G11_winner</td>
+                <td class="orange black" rowspan="4" id="SF2_score1">SF2_score1</td>
+                <td class="orange" rowspan="8" id="SF2_winner">SF2_winner</td>
+                <td class="orange black" rowspan="8" id="Final_score2">Final_score2</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank14">14</td>
+                <td class="yellow" id="player14">Player 14</td>
+                <td class="yellow black" id="G5_score2">G5_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank6">6</td>
+                <td class="orange" id="player6">Player 6</td>
+                <td class="orange black" id="G6_score1">G6_score1</td>
+                <td class="orange" rowspan="2" id="G6_winner">G6_winner</td>
+                <td class="orange black" rowspan="2" id="G11_score2">G11_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank11">11</td>
+                <td class="orange" id="player11">Player 11</td>
+                <td class="orange black" id="G6_score2">G6_score2</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank7">7</td>
+                <td class="yellow" id="player7">Player 7</td>
+                <td class="yellow black" id="G7_score1">G7_score1</td>
+                <td class="yellow" rowspan="2" id="G7_winner">G7_winner</td>
+                <td class="yellow black" rowspan="2" id="G12_score1">G12_score1</td>
+                <td class="orange" rowspan="4" id="G12_winner">G12_winner</td>
+                <td class="orange black" rowspan="4" id="SF2_score2">SF2_score2</td>
+            </tr>
+            <tr>
+                <td class="yellow" id="rank10">10</td>
+                <td class="yellow" id="player10">Player 10</td>
+                <td class="yellow black" id="G7_score2">G7_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank2">2</td>
+                <td class="orange" id="player2">Player 2</td>
+                <td class="orange black" id="G8_score1">G8_score1</td>
+                <td class="yellow" rowspan="2" id="G8_winner">G8_winner</td>
+                <td class="yellow black" rowspan="2" id="G12_score2">G12_score2</td>
+            </tr>
+            <tr>
+                <td class="orange" id="rank15">15</td>
+                <td class="orange" id="player15">Player 15</td>
+                <td class="orange black" id="G8_score2">G8_score2</td>
+            </tr>
+            <tr>
+                <td colspan="7"></td>
+                <td class="table_header">3rd - 4th</td>
+                <td class="table_header">&nbsp;</td>
+                <td class="table_header">3rd</td>
+            </tr>
+            <tr>
+                <td colspan="7"></td>
+                <td id="Bronze_player1">Bronze Player 1</td>
+                <td class="black" id="Bronze_score1">Bronze_score1</td>
+                <td rowspan="2" class="winner" id="Bronze_winner">Bronze_winner</td>
+            </tr>
+            <tr>
+                <td colspan="7"></td>
+                <td id="Bronze_player2">Bronze Player 2</td>
+                <td class="black" id="Bronze_score2">bronze_score2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
