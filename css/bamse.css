@@ -123,11 +123,9 @@ th {
 
 .hover-image {
     position: fixed;
-    top: -130px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    max-width: 300px;
-    max-height: 200px;
+    /* transform: translate(-30%, 10%); */
+    max-width: 500px;
+    max-height: 350px;
     width: auto;
     height: auto;
     border: 2px solid #333;
