@@ -13,9 +13,9 @@ def sudden(player1, player2, lanes, start_index, score):
             getRandom(player2, lanes[lane_index]),
         )
         if res[0] < res[1]:
-            score[0] = score[0] + 1
+            score[0] = score[0] + 0.1
         if res[1] < res[0]:
-            score[1] = score[1] + 1
+            score[1] = score[1] + 0.1
         if res[0] != res[1]:
             return score
 
@@ -45,31 +45,18 @@ def match(player1, player2, lanes, lane):
 
         lane_index = (lane_index + 1) % len(lanes)
         if lanes_left == 0:
-            return sudden(player1, player2, lanes, lane_index, score) + ["SD"]
+            return sudden(player1, player2, lanes, lane_index, score)
 
 
 class Game:
-    def __init__(self, p1, p2, lane, DATA, LANES, MC=True):
+    def __init__(self, p1, p2, lane, DATA, LANES):
         self.player1 = p1
         self.player2 = p2
-        # load pickled darta
-        # print('loading data for ',p1, player_id[p1],p2,player_id[p2])
 
-        # OLD
-        # with open('data/'+str(player_id[p1])+'.pickle', 'rb') as fp:
-        #    data_p1 = pickle.load(fp)
-        # with open('data/'+str(player_id[p2])+'.pickle', 'rb') as fp:
-        #    data_p2 = pickle.load(fp)
         data_p1 = DATA[p1]
         data_p2 = DATA[p2]
 
-        # run match
-        if MC:
-            self.score = match(data_p1, data_p2, LANES, lane)
-        else:
-            self.score = match_mean(data_p1, data_p2, LANES, lane)
-        # print(p1,p2,self.score,self.winner)
-        # print('w',self.winner,'l',self.loser)
+        self.score = match(data_p1, data_p2, LANES, lane)
 
     @property
     def winner_V(self):

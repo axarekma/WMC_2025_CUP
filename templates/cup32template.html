@@ -1,502 +1,287 @@
-<!DOCTYPE html>
+<table>
+    <tbody>
+        <tr>
+            <td class="class_header" colspan="12">Men</td>
+        </tr>
+        <tr>
+            <td class="table_header"></td>
+            <td class="table_header">16 - part-final</td>
+            <td class="table_header">R1</td>
+            <td class="table_header">8 - part-final</td>
+            <td class="table_header">R2</td>
+            <td class="table_header">Quarter-final</td>
+            <td class="table_header">R3</td>
+            <td class="table_header">Semi-final</td>
+            <td class="table_header">R4</td>
+            <td class="table_header">Final</td>
+            <td class="table_header">R5</td>
+            <td class="table_header">Winner</td>
+        </tr>
+        <tr>
 
-<html>
+            <td class="yellow">1</td>
+            <td class="yellow" id="player1">player1</td>
+            <td class="yellow" id="G1_score1">G1_score1</td>
+            <td class="orange" rowspan="2" id="G1_winner">G1_winner</td>
+            <td class="orange" rowspan="2" id="G17_score1">G17_score1</td>
+            <td class="yellow" rowspan="4" id="G17_winner">G17_winner</td>
+            <td class="yellow" rowspan="4" id="QF1_score1">QF1_score1</td>
+            <td class="orange" rowspan="8" id="QF1_winner">QF1_winner</td>
+            <td class="orange" rowspan="8" id="SF1_score1">SF1_score1</td>
+            <td class="yellow" rowspan="16" id="SF1_winner">SF1_winner</td>
+            <td class="yellow" rowspan="16" id="Final_score1">Final_score1</td>
+            <td class="orange winner" rowspan="32" id="Final_winner">Final_winner</td>
+        </tr>
+        <tr>
+            <td class="yellow">32</td>
+            <td class="yellow" id="player32">player32</td>
+            <td class="yellow" id="G1_score2">G1_score2</td>
+        </tr>
+        <tr>
+            <td class="orange">16</td>
+            <td class="orange" id="player16">player16</td>
+            <td class="orange" id="G2_score1">G2_score1</td>
+            <td class="orange" rowspan="2" id="G2_winner">G2_winner</td>
+            <td class="orange" rowspan="2" id="G17_score2">G17_score2</td>
+        </tr>
+        <tr>
+            <td class="orange">17</td>
+            <td class="orange" id="player17">player17</td>
+            <td class="orange" id="G2_score2">G2_score2</td>
+        </tr>
+        <tr>
 
-<head>
-    <style>
-        table {
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            margin: 20px auto;
-            overflow: visible;
-            position: relative;
-            z-index: 10;
-        }
+            <td class="yellow">9</td>
+            <td class="yellow" id="player9">player9</td>
+            <td class="yellow" id="G3_score1">G3_score1</td>
+            <td class="yellow" rowspan="2" id="G3_winner">G3_winner</td>
+            <td class="yellow" rowspan="2" id="G18_score1">G18_score1</td>
+            <td class="yellow" rowspan="4" id="G18_winner">G18_winner</td>
+            <td class="yellow" rowspan="4" id="QF1_score2">QF1_score2</td>
+        </tr>
+        <tr>
 
-        td {
-            border: 3px solid #000;
-            padding: 8px;
-            text-align: center;
-            vertical-align: middle;
-            overflow: visible;
-            position: relative;
-            z-index: 100;
-        }
+            <td class="yellow">24</td>
+            <td class="yellow" id="player24">player24</td>
+            <td class="yellow" id="G3_score2">G3_score2</td>
+        </tr>
+        <tr>
 
-        .class_header {
-            background-color: #dbdcf7;
-            font-weight: bold;
-        }
+            <td class="orange">8</td>
+            <td class="orange" id="player8">player8</td>
+            <td class="orange" id="G4_score1">G4_score1</td>
+            <td class="yellow" rowspan="2" id="G4_winner">G4_winner</td>
+            <td class="yellow" rowspan="2" id="G18_score2">G18_score2</td>
+        </tr>
+        <tr>
+            <td class="orange">25</td>
+            <td class="orange" id="player25">player25</td>
+            <td class="orange" id="G4_score2">G4_score2</td>
+        </tr>
+        <tr>
 
-        .table_header {
-            background-color: #d0d0d0;
-            font-weight: bold;
-        }
+            <td class="yellow">5</td>
+            <td class="yellow" id="player5">player5</td>
+            <td class="yellow" id="G5_score1">G5_score1</td>
+            <td class="orange" rowspan="2" id="G5_winner">G5_winner</td>
+            <td class="orange" rowspan="2" id="G19_score1">G19_score1</td>
+            <td class="orange" rowspan="4" id="G19_winner">G19_winner</td>
+            <td class="orange" rowspan="4" id="QF2_score1">QF2_score1</td>
+            <td class="orange" rowspan="8" id="QF2_winner">QF2_winner</td>
+            <td class="orange" rowspan="8" id="SF1_score2">SF1_score2</td>
+        </tr>
+        <tr>
 
-        .yellow {
-            background-color: #FFFF99;
-        }
+            <td class="yellow">28</td>
+            <td class="yellow" id="player28">player28</td>
+            <td class="yellow" id="G5_score2">G5_score2</td>
+        </tr>
+        <tr>
 
-        .orange {
-            background-color: #FFCC99;
-        }
+            <td class="orange">12</td>
+            <td class="orange" id="player12">player12</td>
+            <td class="orange" id="G6_score1">G6_score1</td>
+            <td class="orange" rowspan="2" id="G6_winner">G6_winner</td>
+            <td class="orange" rowspan="2" id="G19_score2">G19_score2</td>
+        </tr>
+        <tr>
 
-        .black {
-            color: #000;
-        }
+            <td class="orange">21</td>
+            <td class="orange" id="player21">player21</td>
+            <td class="orange" id="G6_score2">G6_score2</td>
+        </tr>
+        <tr>
 
-        .blue {
-            color: #000;
-        }
+            <td class="yellow">13</td>
+            <td class="yellow" id="player13">player13</td>
+            <td class="yellow" id="G7_score1">G7_score1</td>
+            <td class="yellow" rowspan="2" id="G7_winner">G7_winner</td>
+            <td class="yellow" rowspan="2" id="G20_score1">G20_score1</td>
+            <td class="orange" rowspan="4" id="G20_winner">G20_winner</td>
+            <td class="orange" rowspan="4" id="QF2_score2">QF2_score2</td>
+        </tr>
+        <tr>
 
-        .winner {
-            font-weight: bold;
-        }
+            <td class="yellow">20</td>
+            <td class="yellow" id="player20">player20</td>
+            <td class="yellow" id="G7_score2">G7_score2</td>
+        </tr>
+        <tr>
 
-        .score-hover {
-            position: relative;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+            <td class="orange">4</td>
+            <td class="orange" id="player4">player4</td>
+            <td class="orange" id="G8_score1">G8_score1</td>
+            <td class="yellow" rowspan="2" id="G8_winner">G8_winner</td>
+            <td class="yellow" rowspan="2" id="G20_score2">G20_score2</td>
+        </tr>
+        <tr>
+            <td class="orange">29</td>
+            <td class="orange" id="player29">player29</td>
+            <td class="orange" id="G8_score2">G8_score2</td>
+        </tr>
+        <tr>
 
-        .score-hover:hover {
-            background-color: #e6f3ff;
-            transform: scale(0.99);
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
+            <td class="yellow">3</td>
+            <td class="yellow" id="player3">player3</td>
+            <td class="yellow" id="G9_score1">G9_score1</td>
+            <td class="orange" rowspan="2" id="G9_winner">G9_winner</td>
+            <td class="orange" rowspan="2" id="G21_score1">G21_score1</td>
+            <td class="yellow" rowspan="4" id="G21_winner">G21_winner</td>
+            <td class="yellow" rowspan="4" id="QF3_score1">QF3_score1</td>
+            <td class="yellow" rowspan="8" id="QF3_winner">QF3_winner</td>
+            <td class="yellow" rowspan="8" id="SF2_score1">SF2_score1</td>
+            <td class="yellow" rowspan="16" id="SF2_winner">SF2_winner</td>
+            <td class="yellow" rowspan="16" id="Final_score2">Final_score2</td>
+        </tr>
+        <tr>
 
-        < !DOCTYPE html><html><head><style>table {
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            margin: 20px auto;
-            overflow: visible;
-            position: relative;
-            z-index: 10;
-        }
+            <td class="yellow">30</td>
+            <td class="yellow" id="player30">player30</td>
+            <td class="yellow" id="G9_score2">G9_score2</td>
+        </tr>
+        <tr>
 
-        td {
-            border: 3px solid #000;
-            padding: 8px;
-            text-align: center;
-            vertical-align: middle;
-            overflow: visible;
-            position: relative;
-            z-index: 100;
-        }
+            <td class="orange">14</td>
+            <td class="orange" id="player14">player14</td>
+            <td class="orange" id="G10_score1">G10_score1</td>
+            <td class="orange" rowspan="2" id="G10_winner">G10_winner</td>
+            <td class="orange" rowspan="2" id="G21_score2">G21_score2</td>
+        </tr>
+        <tr>
 
-        .class_header {
-            background-color: #dbdcf7;
-            font-weight: bold;
-        }
+            <td class="orange">19</td>
+            <td class="orange" id="player19">player19</td>
+            <td class="orange" id="G10_score2">G10_score2</td>
+        </tr>
+        <tr>
 
-        .table_header {
-            background-color: #d0d0d0;
-            font-weight: bold;
-        }
+            <td class="yellow">11</td>
+            <td class="yellow" id="player11">player11</td>
+            <td class="yellow" id="G11_score1">G11_score1</td>
+            <td class="yellow" rowspan="2" id="G11_winner">G11_winner</td>
+            <td class="yellow" rowspan="2" id="G22_score1">G22_score1</td>
+            <td class="yellow" rowspan="4" id="G22_winner">G22_winner</td>
+            <td class="yellow" rowspan="4" id="QF3_score2">QF3_score2</td>
+        </tr>
+        <tr>
 
-        .yellow {
-            background-color: #FFFF99;
-        }
+            <td class="yellow">22</td>
+            <td class="yellow" id="player22">player22</td>
+            <td class="yellow" id="G11_score2">G11_score2</td>
+        </tr>
+        <tr>
 
-        .orange {
-            background-color: #FFCC99;
-        }
+            <td class="orange">6</td>
+            <td class="orange" id="player6">player6</td>
+            <td class="orange" id="G12_score1">G12_score1</td>
+            <td class="yellow" rowspan="2" id="G12_winner">G12_winner</td>
+            <td class="yellow" rowspan="2" id="G22_score2">G22_score2</td>
+        </tr>
+        <tr>
 
-        .black {
-            color: #000;
-        }
+            <td class="orange">27</td>
+            <td class="orange" id="player27">player27</td>
+            <td class="orange" id="G12_score2">G12_score2</td>
+        </tr>
+        <tr>
 
-        .blue {
-            color: #000;
-        }
+            <td class="yellow">7</td>
+            <td class="yellow" id="player7">player7</td>
+            <td class="yellow" id="G13_score1">G13_score1</td>
+            <td class="orange" rowspan="2" id="G13_winner">G13_winner</td>
+            <td class="orange" rowspan="2" id="G23_score1">G23_score1</td>
+            <td class="orange" rowspan="4" id="G23_winner">G23_winner</td>
+            <td class="orange" rowspan="4" id="QF4_score1">QF4_score1</td>
+            <td class="yellow" rowspan="8" id="QF4_winner">QF4_winner</td>
+            <td class="yellow" rowspan="8" id="SF2_score2">SF2_score2</td>
+        </tr>
+        <tr>
 
-        .winner {
-            font-weight: bold;
-        }
+            <td class="yellow">26</td>
+            <td class="yellow" id="player26">player26</td>
+            <td class="yellow" id="G13_score2">G13_score2</td>
+        </tr>
+        <tr>
 
-        .score-hover {
-            position: relative;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+            <td class="orange">10</td>
+            <td class="orange" id="player10">player10</td>
+            <td class="orange" id="G14_score1">G14_score1</td>
+            <td class="orange" rowspan="2" id="G14_winner">G14_winner</td>
+            <td class="orange" rowspan="2" id="G23_score2">G23_score2</td>
+        </tr>
+        <tr>
 
-        .score-hover:hover {
-            background-color: #e6f3ff;
-            transform: scale(0.99);
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
+            <td class="orange">23</td>
+            <td class="orange" id="player23">player23</td>
+            <td class="orange" id="G14_score2">G14_score2</td>
+        </tr>
+        <tr>
 
+            <td class="yellow">15</td>
+            <td class="yellow" id="player15">player15</td>
+            <td class="yellow" id="G15_score1">G15_score1</td>
+            <td class="yellow" rowspan="2" id="G15_winner">G15_winner</td>
+            <td class="yellow" rowspan="2" id="G24_score1">G24_score1</td>
+            <td class="orange" rowspan="4" id="G24_winner">G24_winner</td>
+            <td class="orange" rowspan="4" id="QF4_score2">QF4_score2</td>
+        </tr>
+        <tr>
+            <td class="yellow">18</td>
+            <td class="yellow" id="player18">player18</td>
+            <td class="yellow" id="G15_score2">G15_score2</td>
+        </tr>
+        <tr>
 
-        .hover-image {
-            position: fixed;
-            top: -130px;
-            left: 50%;
-            transform: translate(-50%, 50%);
-            max-width: 300px;
-            max-height: 200px;
-            width: auto;
-            height: auto;
-            border: 2px solid #333;
-            border-radius: 8px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            object-fit: contain;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const scoreElements = document.querySelectorAll('.score-hover[data-hover-image]');
+            <td class="orange">2</td>
+            <td class="orange" id="player2">player2</td>
+            <td class="orange" id="G16_score1">G16_score1</td>
+            <td class="yellow" rowspan="2" id="G16_winner">G16_winner</td>
+            <td class="yellow" rowspan="2" id="G24_score2">G24_score2</td>
+        </tr>
+        <tr>
 
-            const hoverImg = document.createElement('img');
-            hoverImg.className = 'hover-image';
-            document.body.appendChild(hoverImg);
-
-            scoreElements.forEach(element => {
-                const hoverImageUrl = element.getAttribute('data-hover-image');
-
-                element.addEventListener('mouseenter', () => {
-                    hoverImg.src = hoverImageUrl;
-                    hoverImg.style.opacity = '0.95';
-                });
-
-                element.addEventListener('mousemove', (e) => {
-                    // Position relative to mouse
-                    hoverImg.style.top = (e.clientY - 220) + 'px';
-                    hoverImg.style.left = (e.clientX + 150) + 'px';
-                });
-
-                element.addEventListener('mouseleave', () => {
-                    hoverImg.style.opacity = '0';
-                });
-            });
-        });
-    </script>
-</head>
-</style>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const scoreElements = document.querySelectorAll('.score-hover[data-hover-image]');
-
-        // Create a single hover image element attached to body
-        const hoverImg = document.createElement('img');
-        hoverImg.className = 'hover-image';
-        document.body.appendChild(hoverImg);
-
-        scoreElements.forEach(element => {
-            const hoverImageUrl = element.getAttribute('data-hover-image');
-
-            element.addEventListener('mouseenter', () => {
-                hoverImg.src = hoverImageUrl;
-                hoverImg.style.opacity = '0.95';
-            });
-
-            element.addEventListener('mousemove', (e) => {
-                // Position relative to mouse
-                hoverImg.style.top = (e.clientY - 220) + 'px';
-                hoverImg.style.left = (e.clientX + 150) + 'px';
-            });
-
-            element.addEventListener('mouseleave', () => {
-                hoverImg.style.opacity = '0';
-            });
-        });
-    });
-</script>
-</head>
-
-<body>
-    <table>
-        <tbody>
-            <tr>
-                <td class="class_header" colspan="13">Men</td>
-            </tr>
-            <tr>
-                <td colspan="1"></td>
-                <td class="table_header">16 - part-final</td>
-                <td class="table_header">R1</td>
-                <td class="table_header">8 - part-final</td>
-                <td class="table_header">R2</td>
-                <td class="table_header">Quarter-final</td>
-                <td class="table_header">R3</td>
-                <td class="table_header">Semi-final</td>
-                <td class="table_header">R4</td>
-                <td class="table_header">Final</td>
-                <td class="table_header">R5</td>
-                <td class="table_header">Winner</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">1</td>
-                <td class="yellow" id="player1">player1</td>
-                <td class="yellow" id="G1_score1">G1_score1</td>
-                <td class="orange" rowspan="2" id="G1_winner">G1_winner</td>
-                <td class="orange" rowspan="2" id="G17_score1">G17_score1</td>
-                <td class="yellow" rowspan="4" id="G17_winner">G17_winner</td>
-                <td class="yellow" rowspan="4" id="QF1_score1">QF1_score1</td>
-                <td class="orange" rowspan="8" id="QF1_winner">QF1_winner</td>
-                <td class="orange" rowspan="8" id="SF1_score1">SF1_score1</td>
-                <td class="yellow" rowspan="16" id="SF1_winner">SF1_winner</td>
-                <td class="yellow" rowspan="16" id="Final_score1">Final_score1</td>
-                <td class="orange winner" rowspan="32" id="Final_winner">Final_winner</td>
-            </tr>
-            <tr>
-                <td class="yellow">32</td>
-                <td class="yellow" id="player32">player32</td>
-                <td class="yellow" id="G1_score2">G1_score2</td>
-            </tr>
-            <tr>
-                <td class="orange">16</td>
-                <td class="orange" id="player16">player16</td>
-                <td class="orange" id="G2_score1">G2_score1</td>
-                <td class="orange" rowspan="2" id="G2_winner">G2_winner</td>
-                <td class="orange" rowspan="2" id="G17_score2">G17_score2</td>
-            </tr>
-            <tr>
-                <td class="orange">17</td>
-                <td class="orange" id="player17">player17</td>
-                <td class="orange" id="G2_score2">G2_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">9</td>
-                <td class="yellow" id="player9">player9</td>
-                <td class="yellow" id="G3_score1">G3_score1</td>
-                <td class="yellow" rowspan="2" id="G3_winner">G3_winner</td>
-                <td class="yellow" rowspan="2" id="G18_score1">G18_score1</td>
-                <td class="yellow" rowspan="4" id="G18_winner">G18_winner</td>
-                <td class="yellow" rowspan="4" id="QF1_score2">QF1_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">24</td>
-                <td class="yellow" id="player24">player24</td>
-                <td class="yellow" id="G3_score2">G3_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">8</td>
-                <td class="orange" id="player8">player8</td>
-                <td class="orange" id="G4_score1">G4_score1</td>
-                <td class="yellow" rowspan="2" id="G4_winner">G4_winner</td>
-                <td class="yellow" rowspan="2" id="G18_score2">G18_score2</td>
-            </tr>
-            <tr>
-                <td class="orange">25</td>
-                <td class="orange" id="player25">player25</td>
-                <td class="orange" id="G4_score2">G4_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">5</td>
-                <td class="yellow" id="player5">player5</td>
-                <td class="yellow" id="G5_score1">G5_score1</td>
-                <td class="orange" rowspan="2" id="G5_winner">G5_winner</td>
-                <td class="orange" rowspan="2" id="G19_score1">G19_score1</td>
-                <td class="orange" rowspan="4" id="G19_winner">G19_winner</td>
-                <td class="orange" rowspan="4" id="QF2_score1">QF2_score1</td>
-                <td class="orange" rowspan="8" id="QF2_winner">QF2_winner</td>
-                <td class="orange" rowspan="8" id="SF1_score2">SF1_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">28</td>
-                <td class="yellow" id="player28">player28</td>
-                <td class="yellow" id="G5_score2">G5_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">12</td>
-                <td class="orange" id="player12">player12</td>
-                <td class="orange" id="G6_score1">G6_score1</td>
-                <td class="orange" rowspan="2" id="G6_winner">G6_winner</td>
-                <td class="orange" rowspan="2" id="G19_score2">G19_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">21</td>
-                <td class="orange" id="player21">player21</td>
-                <td class="orange" id="G6_score2">G6_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">13</td>
-                <td class="yellow" id="player13">player13</td>
-                <td class="yellow" id="G7_score1">G7_score1</td>
-                <td class="yellow" rowspan="2" id="G7_winner">G7_winner</td>
-                <td class="yellow" rowspan="2" id="G20_score1">G20_score1</td>
-                <td class="orange" rowspan="4" id="G20_winner">G20_winner</td>
-                <td class="orange" rowspan="4" id="QF2_score2">QF2_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">20</td>
-                <td class="yellow" id="player20">player20</td>
-                <td class="yellow" id="G7_score2">G7_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">4</td>
-                <td class="orange" id="player4">player4</td>
-                <td class="orange" id="G8_score1">G8_score1</td>
-                <td class="yellow" rowspan="2" id="G8_winner">G8_winner</td>
-                <td class="yellow" rowspan="2" id="G20_score2">G20_score2</td>
-            </tr>
-            <tr>
-                <td class="orange">29</td>
-                <td class="orange" id="player29">player29</td>
-                <td class="orange" id="G8_score2">G8_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">3</td>
-                <td class="yellow" id="player3">player3</td>
-                <td class="yellow" id="G9_score1">G9_score1</td>
-                <td class="orange" rowspan="2" id="G9_winner">G9_winner</td>
-                <td class="orange" rowspan="2" id="G21_score1">G21_score1</td>
-                <td class="yellow" rowspan="4" id="G21_winner">G21_winner</td>
-                <td class="yellow" rowspan="4" id="QF3_score1">QF3_score1</td>
-                <td class="yellow" rowspan="8" id="QF3_winner">QF3_winner</td>
-                <td class="yellow" rowspan="8" id="SF2_score1">SF2_score1</td>
-                <td class="yellow" rowspan="16" id="SF2_winner">SF2_winner</td>
-                <td class="yellow" rowspan="16" id="Final_score2">Final_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">30</td>
-                <td class="yellow" id="player30">player30</td>
-                <td class="yellow" id="G9_score2">G9_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">14</td>
-                <td class="orange" id="player14">player14</td>
-                <td class="orange" id="G10_score1">G10_score1</td>
-                <td class="orange" rowspan="2" id="G10_winner">G10_winner</td>
-                <td class="orange" rowspan="2" id="G21_score2">G21_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">19</td>
-                <td class="orange" id="player19">player19</td>
-                <td class="orange" id="G10_score2">G10_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">11</td>
-                <td class="yellow" id="player11">player11</td>
-                <td class="yellow" id="G11_score1">G11_score1</td>
-                <td class="yellow" rowspan="2" id="G11_winner">G11_winner</td>
-                <td class="yellow" rowspan="2" id="G22_score1">G22_score1</td>
-                <td class="yellow" rowspan="4" id="G22_winner">G22_winner</td>
-                <td class="yellow" rowspan="4" id="QF3_score2">QF3_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">22</td>
-                <td class="yellow" id="player22">player22</td>
-                <td class="yellow" id="G11_score2">G11_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">6</td>
-                <td class="orange" id="player6">player6</td>
-                <td class="orange" id="G12_score1">G12_score1</td>
-                <td class="yellow" rowspan="2" id="G12_winner">G12_winner</td>
-                <td class="yellow" rowspan="2" id="G22_score2">G22_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">27</td>
-                <td class="orange" id="player27">player27</td>
-                <td class="orange" id="G12_score2">G12_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">7</td>
-                <td class="yellow" id="player7">player7</td>
-                <td class="yellow" id="G13_score1">G13_score1</td>
-                <td class="orange" rowspan="2" id="G13_winner">G13_winner</td>
-                <td class="orange" rowspan="2" id="G23_score1">G23_score1</td>
-                <td class="orange" rowspan="4" id="G23_winner">G23_winner</td>
-                <td class="orange" rowspan="4" id="QF4_score1">QF4_score1</td>
-                <td class="yellow" rowspan="8" id="QF4_winner">QF4_winner</td>
-                <td class="yellow" rowspan="8" id="SF2_score2">SF2_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">26</td>
-                <td class="yellow" id="player26">player26</td>
-                <td class="yellow" id="G13_score2">G13_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">10</td>
-                <td class="orange" id="player10">player10</td>
-                <td class="orange" id="G14_score1">G14_score1</td>
-                <td class="orange" rowspan="2" id="G14_winner">G14_winner</td>
-                <td class="orange" rowspan="2" id="G23_score2">G23_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">23</td>
-                <td class="orange" id="player23">player23</td>
-                <td class="orange" id="G14_score2">G14_score2</td>
-            </tr>
-            <tr>
-
-                <td class="yellow">15</td>
-                <td class="yellow" id="player15">player15</td>
-                <td class="yellow" id="G15_score1">G15_score1</td>
-                <td class="yellow" rowspan="2" id="G15_winner">G15_winner</td>
-                <td class="yellow" rowspan="2" id="G24_score1">G24_score1</td>
-                <td class="orange" rowspan="4" id="G24_winner">G24_winner</td>
-                <td class="orange" rowspan="4" id="QF4_score2">QF4_score2</td>
-            </tr>
-            <tr>
-                <td class="yellow">18</td>
-                <td class="yellow" id="player18">player18</td>
-                <td class="yellow" id="G15_score2">G15_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">2</td>
-                <td class="orange" id="player2">player2</td>
-                <td class="orange" id="G16_score1">G16_score1</td>
-                <td class="yellow" rowspan="2" id="G16_winner">G16_winner</td>
-                <td class="yellow" rowspan="2" id="G24_score2">G24_score2</td>
-            </tr>
-            <tr>
-
-                <td class="orange">31</td>
-                <td class="orange" id="player31">player31</td>
-                <td class="orange" id="G16_score2">G16_score2</td>
-            </tr>
-            <tr>
-                <td class="notv"></td>
-                <td class="notv"></td>
-                <td colspan="8"></td>
-                <td>3:rd - 4:th</td>
-                <td>&nbsp;</td>
-                <td>3:rd</td>
-            </tr>
-            <tr>
-                <td colspan="10"></td>
-                <td id="Bronze_player1">Bronze_player1</td>
-                <td class="black" id="Bronze_score1">Bronze_score1</td>
-                <td rowspan="2" id="Bronze_winner">Bronze_winner</td>
-            </tr>
-            <tr>
-                <td colspan="10"></td>
-                <td id="Bronze_player2">Bronze_player2</td>
-                <td class="black" id="Bronze_score2">Bronze_score2</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
-
-</html>
+            <td class="orange">31</td>
+            <td class="orange" id="player31">player31</td>
+            <td class="orange" id="G16_score2">G16_score2</td>
+        </tr>
+        <tr>
+            <td class="notv"></td>
+            <td class="notv"></td>
+            <td colspan="8"></td>
+            <td>3:rd - 4:th</td>
+            <td>&nbsp;</td>
+            <td>3:rd</td>
+        </tr>
+        <tr>
+            <td colspan="10"></td>
+            <td id="Bronze_player1">Bronze_player1</td>
+            <td class="black" id="Bronze_score1">Bronze_score1</td>
+            <td rowspan="2" id="Bronze_winner">Bronze_winner</td>
+        </tr>
+        <tr>
+            <td colspan="10"></td>
+            <td id="Bronze_player2">Bronze_player2</td>
+            <td class="black" id="Bronze_score2">Bronze_score2</td>
+        </tr>
+    </tbody>
+</table>

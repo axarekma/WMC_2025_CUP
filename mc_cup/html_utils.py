@@ -152,27 +152,42 @@ class TournamentBracket:
 from .matchplay_MC import Cup16, Cup32
 
 
-def export16(cup: Cup16, name):
+def export(cup, tournament):
+    tournament.set_players(cup.rank)
+    tournament.set_bronze_match(cup.games["SF1"].loser, cup.games["SF2"].loser)
+    for tag, game in cup.games.items():
+        g1res = game.result
+        winner = game.winner
+        tournament.set_result(tag, 1, g1res[0], f"fig/{game.hash}.png")
+        tournament.set_result(tag, 2, g1res[1], f"fig/{game.hash}.png")
+        tournament.set_winner(tag, winner)
+    # tournament.save_html(name)
+    return tournament.soup
+
+
+def export16(cup: Cup16):
     tournament = TournamentBracket("templates/cup16template.html")
-    tournament.set_players(cup.rank)
-    tournament.set_bronze_match(cup.games["SF1"].loser, cup.games["SF2"].loser)
-    for tag, game in cup.games.items():
-        g1res = game.result()
-        winner = game.winner
-        tournament.set_result(tag, 1, g1res[0], f"fig/{game.hash}.png")
-        tournament.set_result(tag, 2, g1res[1], f"fig/{game.hash}.png")
-        tournament.set_winner(tag, winner)
-    tournament.save_html(name)
+    return export(cup, tournament)
 
 
-def export32(cup: Cup32, name):
+def export32(cup: Cup32):
     tournament = TournamentBracket("templates/cup32template.html")
-    tournament.set_players(cup.rank)
-    tournament.set_bronze_match(cup.games["SF1"].loser, cup.games["SF2"].loser)
-    for tag, game in cup.games.items():
-        g1res = game.result()
-        winner = game.winner
-        tournament.set_result(tag, 1, g1res[0], f"fig/{game.hash}.png")
-        tournament.set_result(tag, 2, g1res[1], f"fig/{game.hash}.png")
-        tournament.set_winner(tag, winner)
-    tournament.save_html(name)
+    return export(cup, tournament)
+
+
+from string import Template
+
+
+def build_result_page(title, header, w_table, m_table, output_file):
+    with open("templates/result_template.html") as f:
+        template = Template(f.read())
+
+    result = template.substitute(
+        title=title,
+        header=header,
+        w_table=w_table,
+        m_table=m_table,
+    )
+
+    with open(output_file, "w") as f:
+        f.write(result)

@@ -23,9 +23,6 @@ class CupResult:
         self.score = score
         self.winner = player1 if score[0] > score[1] else player2
 
-    def result(self):
-        return self.score
-
 
 def rint(x):
     return np.round(x).astype(int)
@@ -36,9 +33,8 @@ class MCResult:
         self.player1 = player1
         self.player2 = player2
         self.lane = lane
-
         self.results = [
-            tuple(Game(player1, player2, lane, data, lanes, MC=True).score)
+            tuple(Game(player1, player2, lane, data, lanes).score)
             for el in range(n_iter)
         ]
         winner1 = [el[0] > el[1] for el in self.results]
@@ -52,13 +48,15 @@ class MCResult:
             self.loser = player2
             self.percentage = np.sum(winner1) / n_iter
 
+        self.result = self.calc_result()
+
     @property
     def hash(self):
         return hashlib.sha256(
             (self.player1 + self.player2 + self.lane).encode("utf-8")
         ).hexdigest()[:16]
 
-    def result(self):
+    def calc_result(self):
         res_score = [a[:2] for a in self.results]
         moderes = Counter(res_score).most_common(1)[0][0]
         p1, p2 = self.percentages()
@@ -71,21 +69,28 @@ class MCResult:
         return p1, p2
 
     def save_heatmap(self, name):
-        size_x = max(p[0] for p in self.results) + 1
-        size_y = max(p[1] for p in self.results) + 1
+        size_x = int(max(p[0] for p in self.results)) + 1
+        size_y = int(max(p[1] for p in self.results)) + 1
         heatmap = np.zeros((size_x, size_y), dtype=int)
         for p in self.results:
-            heatmap[p[0], p[1]] = heatmap[p[0], p[1]] + 1
+            p01, p1i = int(p[0]), int(p[1])
+            heatmap[p01, p1i] = heatmap[p01, p1i] + 1
         heatmap = rint(100 * heatmap / len(self.results))
-        heatmap_loworigin = np.flipud(heatmap.transpose())
+        heatmap_loworigin = np.flipud(heatmap)
 
         sns.heatmap(heatmap_loworigin, annot=True, fmt="d", cmap="viridis", cbar=False)
-        plt.xlabel(self.player1)
-        plt.ylabel(self.player2)
+        plt.xlabel(self.player2)
+        plt.ylabel(self.player1)
 
-        plt.xticks(np.arange(size_x) + 0.5, np.arange(size_x))
-        plt.yticks(np.arange(size_y) + 0.5, np.arange(size_y - 1, -1, -1))
-        plt.title("Expected outcome of 100 games")
+        plt.xticks(np.arange(size_y) + 0.5, np.arange(size_y))
+        plt.yticks(np.arange(size_x) + 0.5, np.arange(size_x - 1, -1, -1))
+
+        n = len(self.results)
+        p1 = int(round(100 * sum(r[0] > r[1] for r in self.results) / n))
+        p2 = int(round(100 * sum(r[1] > r[0] for r in self.results) / n))
+        sd = int(round(100 * sum(int(r[1]) == int(r[0]) for r in self.results) / n))
+
+        plt.title(f"Expected outcome: {p1} - {p2} ({sd} in SD) ")
         if name is None:
             return
         plt.savefig(f"fig/{self.hash}", bbox_inches="tight")
@@ -160,9 +165,10 @@ class Cup:
         self.bracket = bracket
         self.mc_iter = mc_iter
         self.games = {}
+        self.outcomes = {}
 
     def set(self, game, result):
-        self.games[game] = result
+        self.outcomes[game] = result
 
     def get_player(self, source, arg):
         if source == "rank":
@@ -189,6 +195,11 @@ class Cup:
                 self.mc_iter,
             )
             self.games[gametag].save_heatmap(gametag)
+            if gametag in self.outcomes:
+                score = self.outcomes[gametag]
+                winner = p1 if score[0] > score[1] else p2
+                self.games[gametag].result = (int(score[0]), int(score[1]))
+                self.games[gametag].winner = winner
 
     @property
     def winner(self):
