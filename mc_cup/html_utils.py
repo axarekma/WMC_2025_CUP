@@ -189,5 +189,5 @@ def build_result_page(title, header, w_table, m_table, output_file):
         m_table=m_table,
     )
 
-    with open(output_file, "w") as f:
+    with open("output.txt", "w", encoding="utf-8") as f:
         f.write(result)
