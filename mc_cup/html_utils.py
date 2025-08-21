@@ -16,9 +16,9 @@ def result_dictionary(result_page_url):
 
     for td in soup.find_all("td"):
         text = td.get_text(strip=True)
-        if re.match(r"[EF][1-9]+", text):
+        if re.match(r"[CE][1-9]+", text):
             courselist.append(text)
-        elif re.match(r"^(1[0-8]|[1-9])$", text):
+        elif re.fullmatch(r"^(1[0-8]|[1-9])$", text):
             datalist.append(int(text))
 
     if not datalist or not courselist:
@@ -189,5 +189,5 @@ def build_result_page(title, header, w_table, m_table, output_file):
         m_table=m_table,
     )
 
-    with open("output.txt", "w", encoding="utf-8") as f:
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(result)
