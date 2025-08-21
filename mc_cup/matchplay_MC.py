@@ -59,8 +59,11 @@ class MCResult:
     def calc_result(self):
         res_score = [a[:2] for a in self.results]
         moderes = Counter(res_score).most_common(1)[0][0]
+        str1 = f"{moderes[0]}".replace('.1',' SD')
+        str2 = f"{moderes[1]}".replace('.1',' SD')
+        
         p1, p2 = self.percentages()
-        return (f"{moderes[0]} ({p1})", f"{moderes[1]} ({p2})")
+        return (f"{str1} ({p1})", f"{str2} ({p2})")
 
     def percentages(self):
         n = len(self.results)
@@ -215,7 +218,7 @@ class Cup:
 
 
 class Cup16(Cup):
-    def __init__(self, rank, data, lanes, mc_iter=1000):
+    def __init__(self, rank, data, lanes, mc_iter=10000):
         """
         Derived Cup class that uses ROUNDS_16 as the bracket configuration.
 
@@ -228,7 +231,7 @@ class Cup16(Cup):
 
 
 class Cup32(Cup):
-    def __init__(self, rank, data, lanes, mc_iter=1000):
+    def __init__(self, rank, data, lanes, mc_iter=10000):
         """
         Derived Cup class that uses ROUNDS_32 as the bracket configuration.
 
