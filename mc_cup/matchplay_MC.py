@@ -218,7 +218,7 @@ class Cup:
 
 
 class Cup16(Cup):
-    def __init__(self, rank, data, lanes, mc_iter=10000):
+    def __init__(self, rank, data, lanes, mc_iter=1000):
         """
         Derived Cup class that uses ROUNDS_16 as the bracket configuration.
 
@@ -231,7 +231,7 @@ class Cup16(Cup):
 
 
 class Cup32(Cup):
-    def __init__(self, rank, data, lanes, mc_iter=10000):
+    def __init__(self, rank, data, lanes, mc_iter=1000):
         """
         Derived Cup class that uses ROUNDS_32 as the bracket configuration.
 
