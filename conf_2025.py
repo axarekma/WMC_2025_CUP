@@ -1,7 +1,7 @@
 URL = "https://www.minigolf-live.com/turnier1504a/"
 
 LANES_C = [1,2,5,6,9,10,14,15,17]
-LANES_E = [4,5,6,8,9,11,16,17,18]
+LANES_E = [10,11,12,13,14,15,16,17,18]
 
 
 LANES = {
@@ -39,28 +39,28 @@ RANK_M = {
     7: "Dennis Kapke",
     8: "Lauro Klöckener",
     9: "Maxime Bugnion",
-    10: "Paolo Porta",
-    11: "Tristan Kleiner",
+    10: "Tristan Kleiner",
+    11: "Paolo Porta",
     12: "Lukas Neumann",
     13: "Thomas Lottermoser",
     14: "Simon Junker",
     15: "Marek Smejkal",
-    16: "Manfred Lindmayr",
-    17: "Peter Eriksson",
-    18: "Yannick Müller",
+    16: "Peter Eriksson",
+    17: "Yannick Müller",
+    18: "Manfred Lindmayr",
     19: "Angelo Friedli",
-    20: "Matteo Diotti",
-    21: "Lars Anderegg",
-    22: "Marcus Ljungblad",
+    20: "Lars Anderegg",
+    21: "Marcus Ljungblad",
+    22: "Matteo Diotti",
     23: "Valerio Marcoaldi",
     24: "Daniel Brtevník",
     25: "Christian Gobetz",
     26: "Ulf Kristiansson",
-    27: "Erik Nilsson",
-    28: "Marco Broggi",
+    27: "Marco Broggi",
+    28: "Erik Nilsson",
     29: "Marko Nuotio",
-    30: "Daniel Moser",
-    31: "Zeno Folkertsma",
+    30: "Zeno Folkertsma",
+    31: "Daniel Moser",
     32: "Jan Kadlec",
     # 32: "Martin Skoupý",
     # 32: "Zdeněk Majkus",

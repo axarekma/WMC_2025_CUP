@@ -9,7 +9,7 @@ from mc_cup.html_utils import build_result_page
 
 from conf_2025 import URL, LANES, RANK_W, RANK_M
 
-mc_iter = 100000
+mc_iter = 200000
 
 data = BamseScraper(URL)
 cupW = Cup16(RANK_W, data, LANES, mc_iter=mc_iter)
