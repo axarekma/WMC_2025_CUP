@@ -9,7 +9,7 @@ from mc_cup.html_utils import build_result_page
 
 from conf_2025 import URL, LANES, RANK_W, RANK_M
 
-mc_iter = 200000
+mc_iter = 100000
 
 data = BamseScraper(URL)
 cupW = Cup16(RANK_W, data, LANES, mc_iter=mc_iter)
@@ -35,22 +35,22 @@ cupW = Cup16(RANK_W, data, LANES, mc_iter=mc_iter)
 
 cupM = Cup32(RANK_M, data, LANES,mc_iter=mc_iter)
 # Set Results here
-# cupM.set("G1", (5, 4))
-# cupM.set("G2", (6, 3))
-# cupM.set("G3", (4, 6))
-# cupM.set("G4", (3, 1))
-# cupM.set("G5", (3, 6))
-# cupM.set("G6", (5, 3))
-# cupM.set("G7", (4, 6))
-# cupM.set("G8", (3, 2))
-# cupM.set("G9", (6, 5))
-# cupM.set("G10", (1, 6))
-# cupM.set("G11", (6, 2))
-# cupM.set("G12", (7, 2))
-# cupM.set("G13", (4, 3))
-# cupM.set("G14", (6, 4))
-# cupM.set("G15", (4, 5))
-# cupM.set("G16", (5, 4))
+cupM.set("G1", (5,3))
+cupM.set("G2", (5, 3))
+cupM.set("G3", (4, 2))
+cupM.set("G4", (3, 5))
+cupM.set("G5", (5,3))
+cupM.set("G6", (6,2))
+cupM.set("G7", (5,1))
+cupM.set("G8", (3,6))
+cupM.set("G9", (4,4.1))
+cupM.set("G10", (4,6))
+cupM.set("G11", (5, 2))
+cupM.set("G12", (5,7))
+cupM.set("G13", (6,0))
+cupM.set("G14", (4.1,4))
+cupM.set("G15", (6,3))
+cupM.set("G16", (4,7))
 
 # cupM.set("G17", (6, 2))
 # cupM.set("G18", (3, 4))

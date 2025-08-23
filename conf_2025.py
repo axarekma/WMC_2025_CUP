@@ -1,7 +1,7 @@
 URL = "https://www.minigolf-live.com/turnier1504a/"
 
 LANES_C = [1,2,5,6,9,10,14,15,17]
-LANES_E = [10,11,12,13,14,15,16,17,18]
+LANES_E = [4,5,6,8,9,11,16,17,18]
 
 
 LANES = {
