@@ -9,7 +9,7 @@ from mc_cup.html_utils import build_result_page
 
 from conf_2025 import URL, LANES, RANK_W, RANK_M
 
-mc_iter = 100000
+mc_iter = 200000
 
 data = BamseScraper(URL)
 cupW = Cup16(RANK_W, data, LANES, mc_iter=mc_iter)
@@ -28,8 +28,8 @@ cupW.set("G10", (4.1,4))
 cupW.set("G11", (6, 0))
 cupW.set("G12", (1,4))
 
-# cupW.set("SF1", (5, 4))
-# cupW.set("SF2", (4, 7))
+cupW.set("SF1", (2,6))
+cupW.set("SF2", (9,4))
 # cupW.set("Bronze", (2, 2.1))
 # cupW.set("Final", (4, 3))
 
@@ -66,8 +66,8 @@ cupM.set("QF2", (5,1))
 cupM.set("QF3", (0,7))
 cupM.set("QF4", (6,4))
 
-# cupM.set("SF1", (7, 2))
-# cupM.set("SF2", (6, 5))
+cupM.set("SF1", (2,4))
+cupM.set("SF2", (1,4))
 # cupM.set("Bronze", (6, 2))
 # cupM.set("Final", (5, 5.1))
 
